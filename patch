@@ -1,0 +1,17 @@
+kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: logging
+spec:
+  selector:
+    matchLabels:
+     region: east
+  template:
+    metadata:
+     name: pod
+     labels:
+       region: east
+    spec:
+      containers:   
+      - name: testc
+        image: fluentd   
